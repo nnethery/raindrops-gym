@@ -1,7 +1,6 @@
 import gym
 from gym import error, spaces, utils
 import numpy as np
-from py4j.java_gateway import JavaGateway
 import subprocess, time
 
 
@@ -9,18 +8,7 @@ class RaindropsGym(gym.Env):
     metadata = {'render.modes': ['human']}
 
     def __init__(self, jar_location, pixels):
-        process = subprocess.Popen(['java', '-jar', jar_location], stdout=subprocess.PIPE)
-        while True:
-            output = process.stdout.readline().decode('utf-8')  # technically should get rid of newline
-            if 'Server started' in output:
-                break
         
-        self.pixels = pixels
-        self.game = JavaGateway().entry_point
-        self.action_space = spaces.Discrete((pixels * 2) + 1)
-        self.observation_space = spaces.Box(low=0, high=255, shape=(480, 800, 4), dtype=np.int8)
-        self.viewer = None
-        time.sleep(1)
 
     def step(self, action):
         if action == 0: # NO OP
