@@ -1,0 +1,3 @@
+[submodule "raindrops-python"]
+	path = raindrops-python
+	url = https://github.com/nnethery/raindrops-python.git
