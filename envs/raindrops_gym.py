@@ -49,14 +49,17 @@ class RaindropsGym(gym.Env):
             for drop in self.game.raindrops:
                 if drop.rect.colliderect(self.game.bucket.rect):
                     if drop.is_bad:
-                        self.game.score -= self.game.score % 10
+                        if self.game.score > 0:
+                            self.game.score -= self.game.score % 10
+                        else:
+                            self.game.score -= 1
                         reward = -1
                     else:
                         self.game.score += 1
                         reward = 1
                     self.game.raindrops.remove(drop)
                     del drop
-                elif drop.rect.bottomleft[1] > self.game.height:
+                elif drop.rect.topleft[1] > self.game.height:
                     if not drop.is_bad:
                         self.game.score -= 1
                         reward = -1
