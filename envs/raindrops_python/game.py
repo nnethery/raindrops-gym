@@ -25,6 +25,7 @@ class Game:
         self.speed_multiplier = 0
         self.loop_in_game_time = 0.0
         self.spawn_threshold = 1.0
+        self.game_over = False
 
     def display_score(self):
         font = pygame.font.Font('freesansbold.ttf', 20)
@@ -35,11 +36,24 @@ class Game:
 
     def process_score(self):
         if self.score < 0:
-            self.score = 0 # Temporary until we call game over
+            self.score = 0
+            self.game_over = True
+            self.reset()
         elif self.score % 10 == 0 and self.score / 10 > self.speed_multiplier:
             self.speed_multiplier += 1
             Raindrop.speed_base += 50
             self.spawn_threshold -= .025
+
+    def reset(self):
+        self.bucket.set_location((self.width / 2, self.height - self.bucket.rect.height))
+
+        self.raindrops = [Raindrop()]
+
+        self.score = 0
+        self.speed_multiplier = 0
+        self.loop_in_game_time = 0.0
+        self.spawn_threshold = 1.0
+        self.game_over = False
 
 if __name__ == "__main__":
     game = Game()
