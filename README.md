@@ -1,2 +1,2 @@
 # Raindrops-gym
-An OpenAI Gym environment for the [Raindorps](https://github.com/nnethery/raindrops-python) game in Python. This is a PyGame implementation of [@vsblaustein's Java game](https://github.com/vsblaustein/raindrops) using libGDX.
+An OpenAI Gym environment for the [Raindrops](https://github.com/nnethery/raindrops-python) game in Python. This is a PyGame implementation of [@vsblaustein's Java game](https://github.com/vsblaustein/raindrops) using libGDX.
