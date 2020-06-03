@@ -142,4 +142,4 @@ cython_debug/
 
 test.py
 logs/
-model.*
+*.h5

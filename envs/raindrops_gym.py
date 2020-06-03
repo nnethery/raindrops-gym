@@ -73,13 +73,15 @@ class RaindropsGym(gym.Env):
                 drop.draw(self.game.screen)
 
             # Manage score
+            self.game.process_score()
             if self.show_score:  
                 self.game.display_score()
-            self.game.process_score()
 
             # Gym data
             image_data = self.observe(state)
             game_over = self.game.game_over
+            if game_over:
+                self.game.reset()
         return image_data, reward, game_over, {}
 
     def observe(self, state):

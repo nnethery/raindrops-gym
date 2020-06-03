@@ -38,7 +38,6 @@ class Game:
         if self.score < 0:
             self.score = 0
             self.game_over = True
-            self.reset()
         elif self.score % 10 == 0 and self.score / 10 > self.speed_multiplier:
             self.speed_multiplier += 1
             Raindrop.speed_base += 50
