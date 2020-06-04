@@ -59,7 +59,7 @@ class RaindropsGym(gym.Env):
                         reward = 1
                     self.game.raindrops.remove(drop)
                     del drop
-                elif drop.rect.topleft[1] > self.game.height:
+                elif drop.rect.bottomleft[1] > self.game.height:
                     if not drop.is_bad:
                         self.game.score -= 1
                         reward = -1
