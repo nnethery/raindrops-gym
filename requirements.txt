@@ -24,7 +24,7 @@ Keras-Preprocessing==1.1.2
 kiwisolver==1.2.0
 Markdown==3.2.2
 matplotlib==3.2.1
-networkx==2.4
+networkx==2.6
 numpy==1.18.4
 oauthlib==3.1.0
 opt-einsum==3.2.1
@@ -54,3 +54,4 @@ urllib3==1.25.9
 Werkzeug==1.0.1
 wrapt==1.12.1
 zipp==3.1.0
+wheel>=0.38.0 # not directly required, pinned by Snyk to avoid a vulnerability
