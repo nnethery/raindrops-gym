@@ -15,7 +15,7 @@ grpcio==1.29.0
 gym==0.17.2
 h5py==2.10.0
 idna==2.9
-imagecodecs==2020.2.18
+imagecodecs==2023.9.18
 imageio==2.8.0
 importlib-metadata==1.6.0
 Keras==2.3.1
@@ -25,7 +25,7 @@ kiwisolver==1.2.0
 Markdown==3.2.2
 matplotlib==3.2.1
 networkx==2.4
-numpy==1.18.4
+numpy==1.22.2
 oauthlib==3.1.0
 opt-einsum==3.2.1
 Pillow==7.1.2
@@ -54,3 +54,4 @@ urllib3==1.25.9
 Werkzeug==1.0.1
 wrapt==1.12.1
 zipp==3.1.0
+setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
